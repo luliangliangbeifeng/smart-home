@@ -1,0 +1,26 @@
+<view class='login_block' hidden='{{ login }}'>
+	<view>密码：<input type='text' placeholder="请输入通行密码" bindinput='inputPwd'></input></view>
+	<button type='primary' bindtap='confirmPwd'>确定</button>
+</view>
+
+<view hidden='{{ !login }}'>
+	<view class="body">
+		<view class="monitor">
+			<view class="flex-row">
+				<text class="border-bottom">Temperature：  {{27}} °C</text>
+			</view>
+			<view class="flex-row">
+				<text class="border-bottom">Humidity：  {{40}} %</text>
+			</view>
+			<view class="flex-row">
+				<text class="border-bottom">Ligthness：  {{47}} Lux</text>
+			</view>
+			<view>
+				<button id="btnLight" hover-class="hover" bindtap="changeStatus">{{LightSwitch?"close the lights":"turn on the lights"}}</button>
+			</view>
+			<view>
+				<button id="btnFan" hover-class="hover" bindtap="changeStatus">{{FanSwitch?"close the curtain":"open the curtain"}}</button>
+			</view>
+		</view>
+	</view>
+</view>
